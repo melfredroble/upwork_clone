@@ -2,6 +2,19 @@
   --primary: #108A00;
 }
 
+@font-face {
+  font-family: "Light";   /*Can be any text*/
+  src: local("timesNewRoman"),
+    url("./fonts/timesNewRoman.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Light";   /*Can be any text*/
+  src: local("timesNewRomanBold"),
+    url("./fonts/timesNewRomanBold.ttf") format("truetype");
+}
+
+
 *{
   margin: 0;
   padding: 0;
@@ -37,7 +50,7 @@ code {
 }
 
 .fs-14 {
-  font-size: 14px;
+  font-size: 14px !important;
 }
 
 .fs-16 {
@@ -48,6 +61,30 @@ code {
   font-size: 11px;
 }
 
+.active-dropdown {
+  background-color: #F2F7F2 !important;
+}
+
+.dropdown-toggle::after {
+  display: none !important; 
+}
+
+.border-right {
+  border-right: 1px solid gray;
+}
+
+.text-dark-green {
+  color: #001e00 !important;
+}
+
+.text-hover-green:hover {
+  color: #14A800 !important;
+}
+
+.fw-bold-5 {
+  font-weight: 500 !important;
+}
+
 /* .dropdown:hover>.dropdown-menu {
   display: block;
 }
@@ -55,3 +92,22 @@ code {
 .dropdown>.dropdown-toggle:active {
     pointer-events: none;
 } */
+
+.hover-rotate{
+  transition: transform .2s;
+  transform: rotate(180deg);
+}
+.hover-rotate:hover{
+  transform: rotate(180deg);
+}
+.hover-rotate.collapse{
+  transform: rotate(90deg); 
+}
+
+.homepage-content {
+  font-size: 80px;
+}
+
+.text-green {
+  color: #14A800 !important;
+}
