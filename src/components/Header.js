@@ -11,8 +11,8 @@ import HeaderDropdown from './HeaderDropdown';
 
 const Header = () => {
 
-  const [onHover, setOnHover] = useState(false);
-
+  const [hoverNavItem, setHoverNavItem] = useState(0);
+  
   return (
   <>
     <Navbar bg="white" expand="lg" fixed='top' className='pt-2 pb-3 px-3 border-bottom-green'>
@@ -29,37 +29,37 @@ const Header = () => {
               style={{ maxHeight: '100px' }}
               navbarScroll
             >
-                <Button 
-                  variant='white'
-                  onMouseEnter={() => setOnHover(true)}
-                  
-                  className="m-0 p-0 text-hover-green fs-14 fw-bold-5 text-dark-green"
-                >
-                    Find Talent
-                    <span className='px-1'>
-                        <svg width={15} xmlns="http://www.w3.org/2000/svg" fill="none" className={onHover && 'hover-rotate'} aria-hidden="true" viewBox="0 0 24 24" role="img"><path vector-effect="non-scaling-stroke" stroke="var(--icon-color, #001e00)" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.5" d="M18 10l-6 5-6-5"></path></svg>
-                    </span>
-                </Button>
               <Button 
                 variant='white'
-                onMouseEnter={() => setOnHover(true)}
-                onMouseLeave={() => setOnHover(false)}
-                className="m-0 text-hover-green fs-14 fw-bold-5 text-dark-green"
+                onMouseEnter={() => setHoverNavItem(1)}
+                onClick={()=> hoverNavItem ? setHoverNavItem(0) : setHoverNavItem(1)}
+                className="m-0 p-0 text-hover-green fs-14 fw-bold-5 shadow-none text-dark-green"
               >
-                  Find Work
+                  Find Talent
                   <span className='px-1'>
-                    <svg width={15} xmlns="http://www.w3.org/2000/svg" fill="none" aria-hidden="true" viewBox="0 0 24 24" role="img"><path vector-effect="non-scaling-stroke" stroke="var(--icon-color, #001e00)" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.5" d="M18 10l-6 5-6-5"></path></svg>
+                      <svg width={15} xmlns="http://www.w3.org/2000/svg" fill="none" className={hoverNavItem ===  1 ? 'hover-rotate' : null} aria-hidden="true" viewBox="0 0 24 24" role="img"><path vector-effect="non-scaling-stroke" stroke="var(--icon-color, #001e00)" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.5" d="M18 10l-6 5-6-5"></path></svg>
                   </span>
               </Button>
               <Button 
                 variant='white'
-                onMouseEnter={() => setOnHover(true)}
-                onMouseLeave={() => setOnHover(false)}
+                onMouseEnter={() => setHoverNavItem(2)}
+                onMouseLeave={() => setHoverNavItem(0)}
+                className="m-0 text-hover-green fs-14 fw-bold-5 text-dark-green"
+              >
+                  Find Work
+                  <span className='px-1'>
+                    <svg width={15} className={hoverNavItem ===  2 ? 'hover-rotate' : null} xmlns="http://www.w3.org/2000/svg" fill="none" aria-hidden="true" viewBox="0 0 24 24" role="img"><path vector-effect="non-scaling-stroke" stroke="var(--icon-color, #001e00)" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.5" d="M18 10l-6 5-6-5"></path></svg>
+                  </span>
+              </Button>
+              <Button 
+                variant='white'
+                onMouseEnter={() => setHoverNavItem(3)}
+                onMouseLeave={() => setHoverNavItem(0)}
                 className="m-0 p-0 text-hover-green fs-14 fw-bold-5 text-dark-green"
               >
                   Why Upwork
                   <span className='px-1'>
-                    <svg width={15} xmlns="http://www.w3.org/2000/svg"  fill="none" aria-hidden="true" viewBox="0 0 24 24" role="img"><path vector-effect="non-scaling-stroke" stroke="var(--icon-color, #001e00)" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.5" d="M18 10l-6 5-6-5"></path></svg>
+                    <svg width={15} className={hoverNavItem ===  3 ? 'hover-rotate' : null} xmlns="http://www.w3.org/2000/svg"  fill="none" aria-hidden="true" viewBox="0 0 24 24" role="img"><path vector-effect="non-scaling-stroke" stroke="var(--icon-color, #001e00)" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.5" d="M18 10l-6 5-6-5"></path></svg>
                   </span>
               </Button>
               <Nav.Link href="#action1" className='text-hover-green fs-14 fw-bold-5 text-dark'>Enterprise</Nav.Link>
@@ -119,7 +119,7 @@ const Header = () => {
         </Navbar.Collapse>
       </Container>
     </Navbar>
-    {onHover && <HeaderDropdown  setOnHover={setOnHover}/>}
+    {hoverNavItem !== 0 && <HeaderDropdown  setHoverNavItem={setHoverNavItem} hoverNavItem={hoverNavItem}/>}
   </>
   )
 }
