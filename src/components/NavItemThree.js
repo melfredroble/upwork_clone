@@ -5,7 +5,7 @@ const NavItemThree = ({setHoverNavItem}) => {
     return (
         <Container onMouseLeave={() => setHoverNavItem(0)} fluid className='z-1 mt-5 pt-3 bg-white shadow h-100 position-relative'>
             <Row className='px-4 pb-5 pt-4 position-fixed bg-white shadow w-100'>
-                <Col xs={3}>
+                <Col xs={2} >
                     <div className="d-flex flex-column w-100">
                         <div className='mb-1 p-3 d-flex '>
                             <div className='d-flex flex-column w-100'>
@@ -23,7 +23,7 @@ const NavItemThree = ({setHoverNavItem}) => {
                         </div>
                     </div>
                 </Col>
-                <Col xs={3}>
+                <Col xs={2}>
                     <div className="d-flex flex-column w-100">
                         <div className='mb-1 p-3 d-flex '>
                             <div className='d-flex flex-column w-100'>
@@ -41,7 +41,7 @@ const NavItemThree = ({setHoverNavItem}) => {
                         </div>
                     </div>
                 </Col>
-                <Col xs={6}>
+                <Col xs={4}>
                     <div className="d-flex flex-column w-100">
                         <div className='mb-1 d-flex pt-3 pb-2 '>
                             <div className='d-flex flex-column w-100'>

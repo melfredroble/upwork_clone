@@ -8,6 +8,8 @@ import { FormGroup } from 'react-bootstrap';
 import Dropdown from 'react-bootstrap/Dropdown';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import HeaderDropdown from './HeaderDropdown';
+import Breadcrumb from './Breadcrumb';
+import { Link, Outlet } from 'react-router-dom';
 
 const Header = () => {
 
@@ -45,7 +47,8 @@ const Header = () => {
               <Button 
                 variant='white'
                 onMouseEnter={() => setHoverNavItem(2)}
-                className="m-0 text-hover-green fs-14 fw-bold-5 text-dark-green"
+                onClick={()=> hoverNavItem ? setHoverNavItem(0) : setHoverNavItem(2)}
+                className="m-0 text-hover-green fs-14 shadow-none fw-bold-5 text-dark-green"
               >
                   Find Work
                   <span className='px-1'>
@@ -55,7 +58,8 @@ const Header = () => {
               <Button 
                 variant='white'
                 onMouseEnter={() => setHoverNavItem(3)}
-                className="m-0 p-0 text-hover-green fs-14 fw-bold-5 text-dark-green"
+                onClick={()=> hoverNavItem ? setHoverNavItem(0) : setHoverNavItem(2)}
+                className="m-0 p-0 text-hover-green fs-14 shadow-none fw-bold-5 text-dark-green"
               >
                   Why Upwork
                   <span className='px-1'>
@@ -124,13 +128,19 @@ const Header = () => {
                 </Dropdown>
               </FormGroup>
             </Form>
-            <Button variant="white" className='mx-2 fw-bold-5 fs-14'>Log In</Button>
+            <Button variant="white" className='mx-2 fw-bold-5 fs-14'>
+              <Link to='/login' className='text-decoration-none text-dark shadow-none'>
+                Log In
+              </Link>
+            </Button>
             <Button className='rounded-pill bg-green fw-bold-5 fs-14 px-4 border border-0' >Sign Up</Button>
           </Container>
         </Navbar.Collapse>
       </Container>
     </Navbar>
     {hoverNavItem !== 0 && <HeaderDropdown  setHoverNavItem={setHoverNavItem} hoverNavItem={hoverNavItem}/>}
+    <Breadcrumb />
+    <Outlet />
   </>
   )
 }
