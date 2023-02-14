@@ -3,8 +3,8 @@ import { Button, Container } from 'react-bootstrap'
 
 const Breadcrumb = () => {
     return (
-        <Container className="mt-5 pt-4 bg-danger" fluid>
-            <nav aria-label="breadcrumb" className='bg-white position-fixed w-100' >
+        <Container className="mt-5 pt-4 bg-danger z-1" fluid>
+            <nav aria-label="breadcrumb" className='bg-white position-fixed w-100 z-1' >
                 <ol className="breadcrumb pt-3  text-dark-green bg-white">
                     <li className="px-2">
                         <a href="/" className='text-dark-green text-decoration-none fw-bold-5 fs-14'>Development & IT</a>

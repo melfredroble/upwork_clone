@@ -3,7 +3,7 @@ import {Row, Container, Col} from 'react-bootstrap'
 
 const NavItemOne = ({setHoverNavItem}) => {
     return (
-        <Container onMouseLeave={() => setHoverNavItem(0)} fluid className='z-1 mt-5 pt-3 bg-white shadow h-100 position-relative'>
+        <Container onMouseLeave={() => setHoverNavItem(0)} fluid className='z-2 mt-5 pt-3 bg-white shadow h-100 position-relative'>
             <Row className='p-1 py-4 position-fixed bg-white shadow w-100'>
                 <Col className='d-flex p-4 pt-2  border-right'>
                     <div className="d-flex flex-column w-100">

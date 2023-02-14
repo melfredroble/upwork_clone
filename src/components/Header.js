@@ -128,12 +128,16 @@ const Header = () => {
                 </Dropdown>
               </FormGroup>
             </Form>
-            <Button variant="white" className='mx-2 fw-bold-5 fs-14'>
-              <Link to='/login' className='text-decoration-none text-dark shadow-none'>
-                Log In
-              </Link>
-            </Button>
-            <Button className='rounded-pill bg-green fw-bold-5 fs-14 px-4 border border-0' >Sign Up</Button>
+            <Link to='/login' className='text-decoration-none text-dark shadow-none pt-1 mx-2'>
+              <Button variant="white" className='mx-2 fw-bold-5 shadow-none fs-14'>
+                  Log In
+              </Button>
+            </Link>
+            <Link to='/signup' className='text-decoration-none shadow-none pt-1'>
+              <Button className='rounded-pill bg-green fw-bold-5 fs-14 py-2 px-4 border border-0' >
+                Sign Up
+              </Button>
+            </Link>
           </Container>
         </Navbar.Collapse>
       </Container>

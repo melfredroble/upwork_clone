@@ -43,6 +43,11 @@ code {
   background-color: var( --primary) !important;
 }
 
+.bg-green-500:hover, .model-name:hover{
+  background-color: #fff !important;
+  color: #108A00 !important;
+}
+
 .bg-green:hover {
   background-color: #14A800 !important;
   transition: 0.3s ease;
@@ -85,6 +90,23 @@ code {
   color: #001e00 !important;
   cursor: pointer;
 }
+
+.bg-dark-green {
+  background-color: #001e00 !important;
+}
+
+.bg-mint {
+  background-color: #13544e !important;
+}
+
+.text-dark-mint {
+  color: #13544e !important;
+}
+
+.br-l-10 {
+  border-radius: 10px 0 0 10px !important;
+}
+
 
 .text-hover-green:hover {
   color: #14A800 !important;
@@ -141,8 +163,25 @@ code {
   border-radius: 10px !important;
 }
 
+.br-r-10 {
+  border-radius: 0 10px 10px 0 !important;
+}
+
+.bg-green-hover:hover {
+  background-color: #e4ebe4 !important;
+  cursor: pointer;
+}
+
+.text-mint {
+  color: #91e6b3 !important;
+}
+
 .z-1 {
   z-index: 11 !important;
+}
+
+.z-2 {
+  z-index: 22 !important;
 }
 
 .btn-separator {
@@ -248,3 +287,136 @@ code {
 .category-tile {
   height: 135px;
 }
+
+
+/* Radio Button */
+.radioBtnBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+
+  max-width: 970px;
+  padding: 50px 60px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  background: #fff;
+  border-radius: 20px;
+  border: 1px solid #d5e0d5;
+  /* -webkit-box-shadow: 0px 8px 10px 0px #d8dfeb;
+  box-shadow: 0px 8px 10px 0px #d8dfeb; */
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.radioBtnBox .radioBox input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+}
+
+.radioBtnBox .radioBox {
+  cursor: pointer;
+  width: 48.5%;
+}
+
+.radioBtnBox .radioBox .radioBox-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 30px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 2px solid #e1e2e7;
+  border-radius: 10px;
+  -webkit-transition: -webkit-box-shadow 0.4s;
+  transition: -webkit-box-shadow 0.4s;
+  -o-transition: box-shadow 0.4s;
+  transition: box-shadow 0.4s;
+  transition: box-shadow 0.4s, -webkit-box-shadow 0.4s;
+  position: relative;
+}
+
+.radioBtnBox .radioBox .radioBox-content img {
+  margin-right: 30px;
+  height: 72px;
+}
+
+.radioBtnBox .radioBox .radioBox-details span {
+  margin-bottom: 10px;
+  display: block;
+  font-size: 20px;
+  line-height: 24px;
+  color: #252f42;
+}
+
+.container .title {
+  font-size: 20px;
+  font-weight: 500;
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
+  color: #252f42;
+  margin-bottom: 20px;
+}
+
+.radioBtnBox .radioBox .radioBox-details p {
+  color: #646a79;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.radioBtnBox .radioBox .radioBox-content:hover {
+  -webkit-box-shadow: 0px 3px 5px 0px #e8e8e8;
+  box-shadow: 0px 3px 5px 0px #e8e8e8;
+}
+
+.radioBtnBox .radioBox input[type="radio"]:checked + .radioBox-content:after {
+  content: "";
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  background: #14A800;
+  right: 20px;
+  top: 20px;
+  border-radius: 100%;
+  border: 3px solid #fff;
+  -webkit-box-shadow: 0px 0px 0px 2px #14A800;
+  box-shadow: 0px 0px 0px 2px #14A800;
+}
+
+.radioBtnBox .radioBox input[type="radio"]:checked + .radioBox-content {
+  border: 2px solid #14A800;
+  background: #eaf1fe;
+  -webkit-transition: ease-in 0.3s;
+  -o-transition: ease-in 0.3s;
+  transition: ease-in 0.3s;
+}
+
+.userTypeBtn {
+  width: 300px;
+}
+
+.title {
+  font-family: 'Noto Serif Bengali', serif;
+  font-weight: 500;
+}
+
+
+.rebrand-underlay {
+  background-image: url(https://www.upwork.com/static/assets/Brontes/img/find-talent.06d34b1.jpg);
+  border-radius: 8px;
+  left: -15px;
+  right: -15px;
+  background-size: cover;
+  background-position: top;
+}
+
+.model-name {
+  margin-top: auto;
+  text-align: left;
+}
+
